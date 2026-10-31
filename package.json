@@ -8,20 +8,33 @@
     "dev": "nodemon src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["express", "mongodb", "crm", "smartbiz"],
+  "keywords": [
+    "express",
+    "mongodb",
+    "crm",
+    "smartbiz"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.0",
-    "mongoose": "^8.7.0",
-    "dotenv": "^16.4.5",
-    "cors": "^2.8.5",
-    "morgan": "^1.10.0",
-    "winston": "^3.14.2",
-    "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^5.0.1"
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.3",
+    "mongoose": "^8.24.7",
+    "morgan": "^1.12.1",
+    "swagger-jsdoc": "^6.3.0",
+    "swagger-ui-express": "^5.0.1",
+    "winston": "^3.19.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.7"
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^26.6.6",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.8",
+    "nodemon": "^3.1.7",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^7.0.2"
   }
 }

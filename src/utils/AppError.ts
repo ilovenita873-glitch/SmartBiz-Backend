@@ -1,6 +1,9 @@
-// Custom error class — keyin to‘ldiriladi
 class AppError extends Error {
-  constructor(message, statusCode) {
+  public statusCode: number;
+  public status: string;
+  public isOperational: boolean;
+
+  constructor(message: string, statusCode: number) {
     super(message);
     this.statusCode = statusCode;
     this.status = `${statusCode}`.startsWith('4') ? 'fail' : 'error';
@@ -10,4 +13,4 @@ class AppError extends Error {
   }
 }
 
-module.exports = AppError;
+export default AppError;
