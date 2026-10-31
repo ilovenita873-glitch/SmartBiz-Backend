@@ -6,6 +6,7 @@ import swaggerSpec from './docs/swagger';
 import productRoutes from './routes/product.routes';
 import orderRoutes from './routes/order.routes';
 import statisticsRoutes from './routes/statistics.routes';
+import notFound from './middlewares/notFound';
 import errorHandler from './middlewares/errorHandler';
 
 const app: Application = express();
@@ -27,6 +28,9 @@ app.get('/health', (_req: Request, res: Response) => {
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
 app.use('/statistics', statisticsRoutes);
+
+// 404 handler
+app.use(notFound);
 
 // Global error handler
 app.use(errorHandler);
