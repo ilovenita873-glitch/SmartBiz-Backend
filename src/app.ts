@@ -2,7 +2,7 @@ import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
-import swaggerSpec from './docs/swagger';
+import swaggerSpec from './docs/swagger.ts';
 
 const app: Application = express();
 
