@@ -4,6 +4,8 @@ import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from './docs/swagger';
 import productRoutes from './routes/product.routes';
+import orderRoutes from './routes/order.routes';
+import statisticsRoutes from './routes/statistics.routes';
 import errorHandler from './middlewares/errorHandler';
 
 const app: Application = express();
@@ -23,6 +25,8 @@ app.get('/health', (_req: Request, res: Response) => {
 
 // Routes
 app.use('/products', productRoutes);
+app.use('/orders', orderRoutes);
+app.use('/statistics', statisticsRoutes);
 
 // Global error handler
 app.use(errorHandler);
