@@ -2,7 +2,9 @@ import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
-import swaggerSpec from './docs/swagger.ts';
+import swaggerSpec from './docs/swagger';
+import productRoutes from './routes/product.routes';
+import errorHandler from './middlewares/errorHandler';
 
 const app: Application = express();
 
@@ -19,6 +21,10 @@ app.get('/health', (_req: Request, res: Response) => {
   res.status(200).json({ status: 'ok', message: 'SmartBiz Backend is running' });
 });
 
-// TODO: routes will be added here
+// Routes
+app.use('/products', productRoutes);
+
+// Global error handler
+app.use(errorHandler);
 
 export default app;

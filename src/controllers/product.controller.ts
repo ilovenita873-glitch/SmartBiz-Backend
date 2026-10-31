@@ -30,8 +30,8 @@ class ProductController {
     });
   });
 
-  // GET /products/:id (ixtiyoriy, keyinroq kerak bo‘lishi mumkin)
-  getProduct = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+  // GET /products/:id
+  getProduct = catchAsync(async (req: Request<{ id: string }>, res: Response, next: NextFunction) => {
     const product = await productService.getProductById(req.params.id);
 
     res.status(200).json({
@@ -42,4 +42,3 @@ class ProductController {
 }
 
 export default new ProductController();
-
